@@ -1,7 +1,7 @@
 body {
 	text-align: center;
 	color: #333;
-	font-size: 14px;
+	font-family: "PT Sans";
 }
 #title {
 	margin-top: 80px;
@@ -26,7 +26,7 @@ body {
 	width: 100px;
 	height: 100px;
 	margin: 5px;
-	background: #f2f2f2;
+	background: #ededed;
 	border-radius: 4px;
 	box-sizing: border-box;
 
@@ -70,7 +70,7 @@ body {
 #info h2 {
 	margin: 0;
 	padding: 10px;
-	font-size: 13px;
+	font-size: .8em;
 	color: #555;
 	background: #f7f7f7;
 	border-bottom: 1px solid #eee;
