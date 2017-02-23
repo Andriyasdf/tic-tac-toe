@@ -55,9 +55,11 @@ function resetGame() {
 }
 
 function setCell(cell, value) {
-	// Make sure cell is clear
-	if ($(cell).hasClass("x") || $(cell).hasClass("o")) {
-		return false;
+	if (!document.getElementById("overwrite_mode").checked) {
+		// Make sure cell is clear
+		if ($(cell).hasClass("x") || $(cell).hasClass("o")) {
+			return false;
+		}
 	}
 
 	// Set the value in the grid array
@@ -69,7 +71,6 @@ function setCell(cell, value) {
 		console.log("X wins!");
 	}
 
-	console.log(game.grid);
 	game.turn++;
 }
 
