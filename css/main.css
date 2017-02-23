@@ -52,11 +52,6 @@ body {
 	color: #336E7B;
 }
 
-span {
-	font-size: 2em;
-	font-family: "FontAwesome";
-}
-
 /* Control panel */
 #control-panel {
 	position: absolute;
@@ -112,4 +107,7 @@ span {
 	margin: 0;
 	padding: 1em;
 	border-bottom: 1px solid #eee;
+}
+#info span {
+	font-weight: 900;
 }
