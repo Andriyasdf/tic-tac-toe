@@ -3,11 +3,11 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Tic Tac Toe</title>
-		<link rel="stylesheet" href="css/vendor/normalize.css">
+		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/main.css">
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans">
-		<link rel="stylesheet" href="css/vendor/font-awesome.min.css">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
 	</head>
 	<body>
 		<h1 id="title">Tic Tac Toe</h1>
@@ -28,16 +28,18 @@
 				<div></div>
 				<div></div>
 				<div></div>
+			</div>
 		</div>
-		</div>
+
+		<h2 id="current_player"></h2>
 
 		<div id="info">
 			<h2>Game info</h2>
-			<p>Player's turn</p>
-			<p>turn 1</p>
+			<p id="turn_count"></p>
+			<p id="players"></p>
 		</div>
 	</body>
 
-	<script src="js/vendor/jquery-3.1.1.min.js"></script>
+	<script src="js/jquery-3.1.1.min.js"></script>
 	<script src="js/main.js"></script>
 </html>
