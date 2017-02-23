@@ -11,7 +11,7 @@
 	</head>
 	<body>
 		<h1 id="title">Tic Tac Toe</h1>
-		<p>To win, simply get three of your letter (x's and o's) in a row.</p>
+		<p>To win, simply get three of your letter (x's or o's) in a row.</p>
 
 		<div id="grid">
 			<div class="row">
@@ -32,6 +32,11 @@
 		</div>
 
 		<h2 id="current_player"></h2>
+
+		<div id="control-panel">
+			<a class="button main" id="new_game_button" href="#" onclick="newGame()">New game</a>
+			<a class="button alt" id="restart_button" href="#" onclick="newGame()">Restart</a>
+		</div>
 
 		<div id="info">
 			<h2>Game info</h2>

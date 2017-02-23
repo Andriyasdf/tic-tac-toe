@@ -16,7 +16,6 @@ body {
 	margin-top: 60px;
 	font-size: 0;
 	vertical-align: middle;
-
 }
 .row {
 	display: block;
@@ -54,11 +53,44 @@ body {
 }
 
 span {
-	font-size: 3em;
+	font-size: 2em;
 	font-family: "FontAwesome";
 }
 
-/* Information panel */
+/* Control panel */
+#control-panel {
+	position: absolute;
+	top: 20px;
+	left: 30px;
+	text-align: center;
+}
+.button {
+	display: inline-block;
+	margin: 3px;
+	padding: 1em 2em;
+	float: left;
+	clear: left;
+	color: inherit;
+	background: #ededed;
+	border-radius: 3px;
+	text-decoration: none;
+}
+.button.main {
+	color: white;
+	background: #336E7B;
+}
+.button.main:hover {
+	background: #255059;
+}
+.button.alt {
+	font-size: .85em;
+	background: #F4B350;
+}
+.button.alt:hover {
+	background: #d69d47;
+}
+
+/* Information */
 #info {
 	position: absolute;
 	top: 20px;
