@@ -37,6 +37,7 @@ $(".row div").click(function(event) {
 		setCell(cell, cellState.X);
 	} else {
 		// Check if versus computer
+		if (game.player.o.isCPU) {
 			cpuMove();
 		} else {
 			setCell(cell, cellState.O);
@@ -124,6 +125,8 @@ function resetGame() {
 	game.player.x.name = x_name;
 	game.player.o.name = o_name;
 
+	if (o_name == "CPU" || o_name == "cpu") {
+		game.player.o.isCPU = true;
 	}
 }
 
