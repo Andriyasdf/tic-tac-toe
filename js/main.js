@@ -152,8 +152,8 @@ function draw() {
 		$("#" + cell).addClass(game.grid[cell]);
 	});
 
-	$("#turn_count").html("turn <b>" + game.turn + "</b>");
-	$("#players").html("<span class='x'>" + game.player.x.name + "(" + game.player.x.wins + ")" + "</span> vs <span class='o'>" + game.player.o.name + "(" + game.player.o.wins + ")" + "</span>");
+	$("#turn_count").html("turn " + game.turn);
+	$("#players").html("<span class='x'>" + game.player.x.name + "</span> - " + game.player.x.wins + " wins" + "<br>vs<br><span class='o'>" + game.player.o.name + "</span>" + " - " + game.player.o.wins + " wins");
 	$("#current_player").html((game.turn % 2 == 0 ? "<span class='x'>" + game.player.x.name : "<span class='o'>" + game.player.o.name) + "</span>'s turn");
 }
 setInterval(draw, 20);
