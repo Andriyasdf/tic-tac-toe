@@ -34,15 +34,16 @@
 		<h2 id="current_player"></h2>
 
 		<div id="control-panel">
-			<a class="button main" href="#" onclick="newGame()">New game</a>
-			<a class="button alt" href="#" onclick="resetGame()">Restart</a>
-			<label><input type="checkbox" id="overwrite_mode">Overwrite mode</label>
+			<a class="button main" href="#" onclick="resetGrid()">New game</a>
+			<a class="button alt" href="#" onclick="resetGame()">Reset</a>
+			<label><input type="checkbox" id="overwrite_mode"> Overwrite mode</label>
 		</div>
 
 		<div id="info">
 			<h2>Game info</h2>
 			<p id="turn_count"></p>
 			<p id="players"></p>
+			<p id="winner"></p>
 		</div>
 	</body>
 
