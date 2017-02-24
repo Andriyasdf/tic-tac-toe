@@ -68,11 +68,13 @@ function setCell(cell, value) {
 		game.grid[0] + game.grid[1] + game.grid[2] == "xxx" ||
 		game.grid[3] + game.grid[4] + game.grid[5] == "xxx" ||
 		game.grid[6] + game.grid[7] + game.grid[8] == "xxx" ||
+		
 		game.grid[0] + game.grid[3] + game.grid[6] == "xxx" ||
 		game.grid[1] + game.grid[4] + game.grid[7] == "xxx" ||
 		game.grid[2] + game.grid[5] + game.grid[8] == "xxx" ||
+		
 		game.grid[0] + game.grid[4] + game.grid[8] == "xxx" ||
-		game.grid[2] + game.grid[4] + game.grid[8] == "xxx"
+		game.grid[2] + game.grid[4] + game.grid[6] == "xxx"
 	) {
 		winGame(game.player.x);
 		return;
@@ -80,19 +82,21 @@ function setCell(cell, value) {
 		game.grid[0] + game.grid[1] + game.grid[2] == "ooo" ||
 		game.grid[3] + game.grid[4] + game.grid[5] == "ooo" ||
 		game.grid[6] + game.grid[7] + game.grid[8] == "ooo" ||
+		
 		game.grid[0] + game.grid[3] + game.grid[6] == "ooo" ||
 		game.grid[1] + game.grid[4] + game.grid[7] == "ooo" ||
 		game.grid[2] + game.grid[5] + game.grid[8] == "ooo" ||
+		
 		game.grid[0] + game.grid[4] + game.grid[8] == "ooo" ||
-		game.grid[2] + game.grid[4] + game.grid[8] == "ooo"
+		game.grid[2] + game.grid[4] + game.grid[6] == "ooo"
 	) {
 		winGame(game.player.o);
 		return;
 	}
 
 	// Tie condition
-	if (game.grid.every(function(cell) {
-		return cell == cellState.X || cell == cellState.O;
+	if (game.grid.every(function(currentValue, index) {
+		isCellAssigned(index);
 	})) {
 		winGame();
 		return;
@@ -107,13 +111,13 @@ function isCellAssigned(cell) {
 
 function winGame(player) {
 	if (player == null) {
+		openWindow("#win-screen", "Nobody wins!");
 		console.log("Nobody wins!");
 	} else {
 		player.wins++;
+		openWindow("#win-screen", player.name + " wins!");
 		console.log(player.name + " wins!");
 	}
-
-	openWindow("#win-screen", player.name + " wins!");
 }
 
 function resetGame() {
