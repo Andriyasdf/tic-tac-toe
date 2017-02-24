@@ -78,7 +78,7 @@ function resetGame() {
 	var o_name = prompt("O's name:", game.player.o.name);
 
 	game.player.x.name = x_name;
-	game.player.o.name = x_name;
+	game.player.o.name = o_name;
 
 	resetGrid();
 }

@@ -46,7 +46,7 @@ body {
 	content: "\f111";
 }
 .x {
-	color: #F4B350;
+	color: #E67E22;
 }
 .o {
 	color: #336E7B;
@@ -78,10 +78,10 @@ body {
 }
 .button.alt {
 	font-size: .85em;
-	background: #F4B350;
+	background: #F9BF3B;
 }
 .button.alt:hover {
-	background: #d69d47;
+	background: #F9BF3B;
 }
 
 /* Information */
