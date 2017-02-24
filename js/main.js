@@ -107,13 +107,13 @@ function isCellAssigned(cell) {
 
 function winGame(player) {
 	if (player == null) {
-		resetGrid();
 		console.log("Nobody wins!");
 	} else {
 		player.wins++;
-		resetGrid();
 		console.log(player.name + " wins!");
 	}
+
+	openWindow("#win-screen", player.name + " wins!");
 }
 
 function resetGame() {
@@ -137,6 +137,8 @@ function resetGrid() {
 		cellState.NONE, cellState.NONE, cellState.NONE,
 		cellState.NONE, cellState.NONE, cellState.NONE
 	];
+
+	console.log("Starting new game...");
 }
 
 function draw() {

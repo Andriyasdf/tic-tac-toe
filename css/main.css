@@ -8,6 +8,10 @@ body {
 	margin-top: 60px;
 	padding-right: .5em;
 }
+body > p {
+	width: 450px;
+	margin: auto;
+}
 
 /* Game board */
 #grid {
@@ -62,15 +66,15 @@ body {
 }
 .button {
 	display: block;
-	margin: 3px;
+	margin: 3px 0;
 	padding: 1em 2em;
-	color: inherit;
-	background: #ededed;
+	color: white;
+	background: #3e3e3e;
 	border-radius: 3px;
 	text-decoration: none;
+	transition: .2s all;
 }
 .button.main {
-	color: white;
 	background: #336E7B;
 }
 .button.main:hover {
@@ -78,10 +82,10 @@ body {
 }
 .button.alt {
 	font-size: .85em;
-	background: #F9BF3B;
+	background: #255059;
 }
 .button.alt:hover {
-	background: #F9BF3B;
+	background: #255059;
 }
 
 /* Information */
@@ -109,4 +113,34 @@ body {
 }
 #info span {
 	font-weight: 900;
+}
+
+#win-screen {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	opacity: 0;
+	pointer-events: none;
+	transition: .4s opacity;
+}
+#win-screen.active {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+#win-screen div {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	padding: 2.5em;
+	transform: translate(-50%, -50%);
+	background: #f7f7f7;
+	border-radius: 5px;
+}
+
+#win-screen h1 {
+	margin-top: 0;
 }
