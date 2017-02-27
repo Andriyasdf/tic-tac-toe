@@ -33,30 +33,13 @@ $(".row div").click(function(event) {
 		}
 	}
 
+	// Check if game turn is odd (x's turn)
 	if (game.turn % 2 == 0) {
 		setCell(cell, cellState.X);
 	} else {
-		// Check if versus computer
-		if (game.player.o.isCPU) {
-			cpuMove();
-		} else {
-			setCell(cell, cellState.O);
-		}
+		setCell(cell, cellState.O);
 	}
 });
-
-// Run computer opponent move
-function cpuMove() {
-	var randomCell = Math.floor(Math.random()*8);
-
-	// Select a random cell
-	if (!isCellAssigned(randomCell)) {
-		setCell(randomCell, cellState.O);
-	} else {
-		cpuMove();
-		console.warn("CPU tried placing in assigned cell");
-	}
-}
 
 function setCell(cell, value) {
 	// Set the value in the grid array
@@ -101,12 +84,16 @@ function setCell(cell, value) {
 		winGame();
 		return;
 	}
-
-	game.turn++;
+	
+	nextTurn();
 }
 
 function isCellAssigned(cell) {
 	return (game.grid[cell] == cellState.X || game.grid[cell] == cellState.O);
+}
+
+function nextTurn() {
+	game.turn++;
 }
 
 function winGame(player) {
