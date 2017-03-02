@@ -17,3 +17,8 @@ function cpuMove() {
 		console.warn("CPU tried placing in assigned cell, retrying");
 	}
 }
+
+function isNearWin() {
+// Check if 2 of 3 cells are filled
+	
+}

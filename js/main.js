@@ -1,5 +1,8 @@
 var game = {
+	// Keep track of current states
 	turn: 0,
+	
+	// Record player names and scores
 	player: {
 		x: {
 			name: "Orange",
@@ -10,6 +13,8 @@ var game = {
 			wins: 0
 		}
 	},
+	
+	// Store the game board in an array
 	grid: []
 };
 var cellState = {
@@ -33,7 +38,7 @@ $(".row div").click(function(event) {
 		}
 	}
 
-	// Check if game turn is odd (x's turn)
+	// Check if game turn is even (x's turn)
 	if (game.turn % 2 == 0) {
 		setCell(cell, cellState.X);
 	} else {
@@ -78,9 +83,7 @@ function setCell(cell, value) {
 	}
 
 	// Tie condition
-	if (game.grid.every(function(currentValue, index) {
-		isCellAssigned(index);
-	})) {
+	if (game.turn >= 9) {
 		winGame();
 		return;
 	}
@@ -88,11 +91,11 @@ function setCell(cell, value) {
 	nextTurn();
 }
 
-function isCellAssigned(cell) {
-	return (game.grid[cell] == cellState.X || game.grid[cell] == cellState.O);
-}
-
 function nextTurn() {
+	// Check if CPU is up
+		if (game.player.o.isCPU) {
+			cpuMove();
+		}
 	game.turn++;
 }
 
@@ -124,9 +127,9 @@ function resetGame() {
 function resetGrid() {
 	game.turn = 0;
 	game.grid = [
-		cellState.NONE, cellState.NONE, cellState.NONE,
-		cellState.NONE, cellState.NONE, cellState.NONE,
-		cellState.NONE, cellState.NONE, cellState.NONE
+		[cellState.NONE, cellState.NONE, cellState.NONE],
+		[cellState.NONE, cellState.NONE, cellState.NONE],
+		[cellState.NONE, cellState.NONE, cellState.NONE]
 	];
 
 	console.log("Starting new game...");
@@ -140,7 +143,7 @@ function draw() {
 	});
 
 	$("#turn_count").html("turn " + game.turn);
-	$("#players").html("<span class='x'>" + game.player.x.name + "</span> - " + game.player.x.wins + " wins" + "<br>vs<br><span class='o'>" + game.player.o.name + "</span>" + " - " + game.player.o.wins + " wins");
+	$("#players").html("<span class='x'>" + game.player.x.name + "</span> - " + game.player.x.wins + "<br><span class='o'>" + game.player.o.name + "</span>" + " - " + game.player.o.wins);
 	$("#current_player").html((game.turn % 2 == 0 ? "<span class='x'>" + game.player.x.name : "<span class='o'>" + game.player.o.name) + "</span>'s turn");
 }
 setInterval(draw, 20);
