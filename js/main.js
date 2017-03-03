@@ -81,14 +81,14 @@ function setCell(cell, value) {
 		winGame(game.player.o);
 		return;
 	}
-
+	
+	nextTurn();
+	
 	// Tie condition
 	if (game.turn >= 9) {
 		winGame();
 		return;
 	}
-	
-	nextTurn();
 }
 
 function nextTurn() {
@@ -127,9 +127,9 @@ function resetGame() {
 function resetGrid() {
 	game.turn = 0;
 	game.grid = [
-		[cellState.NONE, cellState.NONE, cellState.NONE],
-		[cellState.NONE, cellState.NONE, cellState.NONE],
-		[cellState.NONE, cellState.NONE, cellState.NONE]
+		cellState.NONE, cellState.NONE, cellState.NONE,
+		cellState.NONE, cellState.NONE, cellState.NONE,
+		cellState.NONE, cellState.NONE, cellState.NONE
 	];
 
 	console.log("Starting new game...");
